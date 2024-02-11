@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import './Discount.css'
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 
 
 
@@ -11,7 +9,7 @@ function Discount() {
   const[profit,setProfit]=useState(0)
   const[reduction,setReduction]=useState(0)
 
-  const calculate = (e) =>{
+  const calculate = () =>{
    if(price === 0 || discount === 0)
    {
     alert("please enter the values")
@@ -32,45 +30,56 @@ function Discount() {
   }
 
   return (
-    <div className='body'>
-      <div className="content">
-
-        <div style={{marginLeft:'30px'}} className="title text-center">
-            <h1>Discount <br /> Calculator <br />
-            <i className="fa-solid fa-calculator "></i>
-             </h1>
-        </div>
-
-        <div className="details">
-         
-         <div className="response">
-            <div className="before">
-                <h5>Actual <br /> Price  <span style={{color:'red',fontSize:'25px'}}>₹:{price}</span></h5>
+    <>
+      <div class="section">
+        <div class="calculator-area">
+          <div class="text-area">
+            <h1>Discount Calculator</h1>
+          </div>
+          <div class="processing-area">
+            <div class="discount-area">
+              <p>Your Discount Price is</p>
+              <h1 style={{fontSize:'60px',fontWeight:'bolder'}}>{reduction}</h1>
             </div>
-            <div className="after">
-            <h5>Your <br /> Savings <span style={{color:'green',fontSize:'25px'}}>₹:{profit}</span></h5>
+            <div className="sample-information">
+              <div>
+                Actual amount : <span style={{color:'red'}}>{price}</span>
+              </div>
+              <div>
+                Discount Amount : <span style={{color:'blue'}}>{profit}</span>{" "}
+              </div>
             </div>
-         </div>
-
-        <div className="form">
-         <form >
-        <TextField value={price || ""} onChange={(e)=>setPrice(e.target.value)} className='form-control'  style={{marginBottom:'20px'}} id="outlined-basic" label="Enter Amount" variant="outlined" />
-        <TextField value={discount || ""}  onChange={(e)=>setDiscount(e.target.value)} className='form-control' id="outlined-basic" label="Enter Discount %" variant="outlined" />
-        <div className="button">
-        <Button onClick={calculate} style={{backgroundColor:'green'}} className='me-4' variant="contained">Calculate</Button>
-        <Button onClick={reset} style={{backgroundColor:'red'}}  variant="contained">Clear</Button>
-        </div>
-        </form>
-        </div>
-        
-        <div className="result">
-            <h3 className='text-center'>Net Amount <br /> <span className='span' style={{color:'green',fontSize:'70px',fontWeight:'700'}} >₹: {reduction}</span> </h3>
-        </div>
-    
+            <div>
+              <label>Enter Amount</label> <br />
+              <input
+                value={"" | price}
+                onChange={(e) => setPrice(e.target.value)}
+                class="form-control"
+                type="text"
+              />
+            </div>
+            <div>
+              <label>Enter discount percent</label> <br />
+              <input
+                value={"" | discount}
+                onChange={(e) => setDiscount(e.target.value)}
+                class="form-control"
+                type="text"
+              />
+            </div>
+            <div class="button-div">
+              <button onClick={() => calculate()} class="btn btn-success">
+                Calculate
+              </button>
+              <button onClick={() => reset()} class="btn btn-danger">
+                Reset
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  )
+    </>
+  );
 }
 
 export default Discount

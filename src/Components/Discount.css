@@ -1,88 +1,112 @@
-.body{
-    width: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.body .content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    background-color: rgb(10, 174, 10);
-    width: 45%;
-    margin-left:450px;
-    padding: 10px;
-    border-radius: 50px;
-   
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  margin: 30px;
+}
+.calculator-area {
+  width: 60%;
+  background-color: green;
+  min-height: 20vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px;
+  border-radius: 20px;
+}
+.calculator-area .text-area {
+  flex: 1;
+  color: white;
+}
+.calculator-area .processing-area {
+  flex: 1;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+.calculator-area .processing-area .discount-area {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+  color: green;
+}
+.calculator-area .processing-area .sample-information {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+.calculator-area .processing-area label {
+  margin-top: 30px;
+}
+.calculator-area .processing-area input {
+  width: 100%;
+}
+.button-div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.button-div .btn {
+  flex: 50%;
+  margin: 0 5px;
 }
 
-.body .content .title h1{
-    color: white;
-    font-weight: 400;
-    letter-spacing: 1px;
-    margin-left: 20px;
-    text-shadow: 2px 1px 1px rgb(8, 8, 8);
-}
-
-.body .content .details{
-   margin-top: 10px;
-   margin-bottom: 10px;
-   background-color: white;
-   margin-left: 100px;
-   padding: 10px;
-   width: 800px;
-   border-radius: 50px;
-}
-.body .content .details .response{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 30px;
-}
-.body .content .details .form{
-    display: flex;
-    flex-direction:column;
-}
-.body .content .details .form form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+@media (min-width: 431px) and (max-width: 900px) {
+  .section {
+    margin: 20px 0;
+  }
+    .calculator-area {
+    width: 80%;
+  }
+  .calculator-area .text-area {
+    flex: 100%;
+    text-align: center;
+  }
+  .calculator-area .processing-area {
+    flex: 100%;
     padding: 20px;
-}
-.body .content .details .form .button{
-   margin-top: 30px;
-   display: flex;
-   justify-content: center;
+  }
+  .button-div {
+    flex-direction: column;
+  }
+  .button-div .btn {
+    margin-bottom: 10px;
+  }
 }
 
-@media (max-width:450px){
-    .body{
-        padding: 20px;
-    }
-    .body .content{
-        padding: 10px;
-        margin-left: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        width: 90%;
-    }
-    .body .content .title h1{
-        font-size: 18px;
-    }
-    .body .content .details{
-        margin-top: 5px;
-        margin-bottom: 5px;
-        background-color: white;
-        margin-left: 10px;
-        padding: 5px;
-        border-radius: 50px;
-        width: 500px;
-     }
-     .body .content .details .response .before h5,.body .content .details .response .after h5{
-        font-size: 15px;
-     }
-     .result h3{
-        font-weight: 300;
-     }
-    }
+@media (max-width: 430px) {
+  .section {
+    margin: 15px 0;
+  }
+  .calculator-area {
+    width: 90%;
+  }
+  .calculator-area .text-area {
+    flex: 100%;
+    text-align: center;
+  }
+  .calculator-area .processing-area {
+    flex: 100%;
+    padding: 10px;
+  }
+  .button-div {
+    flex-direction: column;
+  }
+  .button-div .btn {
+    margin-bottom: 8px;
+  }
+}
